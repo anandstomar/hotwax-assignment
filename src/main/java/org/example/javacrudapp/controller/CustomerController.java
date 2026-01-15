@@ -1,6 +1,5 @@
 package org.example.javacrudapp.controller;
 
-
 import org.example.javacrudapp.model.Customer;
 import org.example.javacrudapp.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
