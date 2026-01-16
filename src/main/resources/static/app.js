@@ -1,6 +1,5 @@
 const API_URL = "http://localhost:8080";
 
-// 1. Handle Login
 async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -14,9 +13,8 @@ async function login() {
         });
 
         if (response.ok) {
-            // The response text is the JWT Token
             const token = await response.text();
-            localStorage.setItem("jwt_token", token); // Save token to browser
+            localStorage.setItem("jwt_token", token);
             showDashboard();
         } else {
             errorMsg.innerText = "Invalid Username or Password";
@@ -27,7 +25,6 @@ async function login() {
     }
 }
 
-// 2. Fetch and Display Orders
 async function fetchOrders() {
     const token = localStorage.getItem("jwt_token");
 
@@ -35,7 +32,7 @@ async function fetchOrders() {
         const response = await fetch(`${API_URL}/orders`, {
             method: "GET",
             headers: {
-                "Authorization": "Bearer " + token, // Send Token in Header
+                "Authorization": "Bearer " + token, 
                 "Content-Type": "application/json"
             }
         });
@@ -76,7 +73,6 @@ function renderOrders(orders) {
     });
 }
 
-// 4. Delete Order
 async function deleteOrder(id) {
     if(!confirm("Are you sure?")) return;
     
@@ -85,22 +81,20 @@ async function deleteOrder(id) {
         method: "DELETE",
         headers: { "Authorization": "Bearer " + token }
     });
-    fetchOrders(); // Refresh list
+    fetchOrders(); 
 }
 
-// 5. UI Helpers
 function showDashboard() {
     document.getElementById("login-section").classList.add("hidden");
     document.getElementById("dashboard-section").classList.remove("hidden");
-    fetchOrders(); // Load data immediately
+    fetchOrders(); 
 }
 
 function logout() {
     localStorage.removeItem("jwt_token");
-    location.reload(); // Reload page to reset
+    location.reload(); 
 }
 
-// Check if already logged in on page load
 window.onload = () => {
     if (localStorage.getItem("jwt_token")) {
         showDashboard();

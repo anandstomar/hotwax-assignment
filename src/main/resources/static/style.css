@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #2563eb;       /* Modern Blue */
+    --primary-color: #2563eb;     
     --primary-hover: #1d4ed8;
-    --danger-color: #ef4444;        /* Red */
+    --danger-color: #ef4444;      
     --danger-hover: #dc2626;
-    --bg-color: #f3f4f6;            /* Light Gray Background */
+    --bg-color: #f3f4f6;            
     --card-bg: #ffffff;
     --text-dark: #1f2937;
     --text-gray: #6b7280;
@@ -18,7 +18,7 @@ body {
     padding-bottom: 2rem;
 }
 
-/* --- Navigation Bar --- */
+
 .navbar {
     background-color: white;
     border-bottom: 1px solid var(--border-color);
@@ -52,14 +52,14 @@ body {
 .user-greeting {
     font-size: 0.875rem;
     color: var(--text-gray);
-    display: none; /* Show on desktop only */
+    display: none; 
 }
 
 @media(min-width: 600px) {
     .user-greeting { display: block; }
 }
 
-/* --- Container & Cards --- */
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -97,7 +97,6 @@ body {
     font-size: 0.875rem;
 }
 
-/* --- Buttons --- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -144,7 +143,6 @@ body {
     width: 100%;
 }
 
-/* --- Auth (Login) Styles --- */
 .auth-container {
     min-height: 80vh;
     display: flex;
@@ -174,7 +172,7 @@ input {
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 0.95rem;
-    box-sizing: border-box; /* Fix padding issues */
+    box-sizing: border-box; 
 }
 input:focus {
     outline: none;
