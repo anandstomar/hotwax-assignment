@@ -1,0 +1,219 @@
+:root {
+    --primary-color: #2563eb;       /* Modern Blue */
+    --primary-hover: #1d4ed8;
+    --danger-color: #ef4444;        /* Red */
+    --danger-hover: #dc2626;
+    --bg-color: #f3f4f6;            /* Light Gray Background */
+    --card-bg: #ffffff;
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --border-color: #e5e7eb;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-greeting {
+    font-size: 0.875rem;
+    color: var(--text-gray);
+    display: none; /* Show on desktop only */
+}
+
+@media(min-width: 600px) {
+    .user-greeting { display: block; }
+}
+
+/* --- Container & Cards --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.card-subtitle {
+    margin: 0.25rem 0 0 0;
+    color: var(--text-gray);
+    font-size: 0.875rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+.btn-outline:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    border: 1px solid transparent;
+    padding: 0.4rem 0.8rem;
+}
+.btn-danger:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* --- Auth (Login) Styles --- */
+.auth-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.auth-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.auth-card h2 { margin-top: 0; margin-bottom: 0.5rem; }
+.subtitle { color: var(--text-gray); margin-bottom: 1.5rem; font-size: 0.9rem; }
+
+.form-group { text-align: left; margin-bottom: 1rem; }
+label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.4rem; }
+input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box; /* Fix padding issues */
+}
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.error-msg {
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+/* --- Table --- */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f9fafb;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover { background-color: #f9fafb; }
+
+.text-right { text-align: right; }

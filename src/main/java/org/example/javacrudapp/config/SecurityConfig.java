@@ -35,6 +35,7 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable) // New Syntax
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/", "/index.html", "/*.css", "/*.js").permitAll()
                 .requestMatchers("/users/new", "/users/authenticate").permitAll()
                 .requestMatchers("/orders/**", "/customers/**").authenticated()
             )

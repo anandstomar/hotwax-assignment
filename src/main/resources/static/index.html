@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1 class="brand">📦 E-Commerce Admin</h1>
+            <div class="nav-actions">
+                <span class="user-greeting">Welcome, Admin</span>
+                <button onclick="logout()" class="btn btn-outline">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="login-section" class="auth-container">
+        <div class="auth-card">
+            <h2>Sign In</h2>
+            <p class="subtitle">Access your dashboard</p>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button onclick="login()" class="btn btn-primary full-width">Login</button>
+            <p id="login-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <main id="dashboard-section" class="container hidden">
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Recent Orders</h2>
+                    <p class="card-subtitle">Manage and track your customer orders</p>
+                </div>
+                <button onclick="fetchOrders()" class="btn btn-primary">
+                    Refresh List
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Total Items</th>
+                            <th class="text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-body">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
